@@ -1,5 +1,5 @@
 variable "cluster-name" {
-  default = "new-cluster-name"
+  default = "pluto"
 }
 
 variable "dns-zone" {
@@ -54,21 +54,21 @@ variable "etcd_version" {
 }
 
 variable "vpc-fullcidr" {
-  default = "10.221.4.0/22"
+  default = "10.5.4.0/22"
   description = "the vpc cdir"
 }
 variable "Subnet-Public-AzA-CIDR" {
-  default = "10.221.5.0/24"
+  default = "10.5.5.0/24"
   description = "the cidr of the subnet"
 }
 
 variable "Subnet-Master-CIDR" {
-  default = "10.221.6.0/24"
+  default = "10.5.6.0/24"
   description = "the cidr of the subnet"
 }
 
 variable "Subnet-Nodes-CIDR" {
-  default = "10.221.7.0/24"
+  default = "10.5.7.0/24"
   description = "the cidr of the subnet"
 }
 

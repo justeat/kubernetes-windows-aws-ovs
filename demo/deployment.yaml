@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demo-deployement
+  labels:
+    app: demo-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo-deployment-app
+    spec:
+      containers:
+        - name: demo-deployment-app
+          image: operry/demo-app-win-mvc:1.0
+          ports:
+            - containerPort: 8000
+      nodeSelector:
+        beta.kubernetes.io/os: windows            
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-deployment-app-service
+  labels:
+    app: demo-deployment-app
+    owner: some-team 
+spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+      name: http
+  selector:
+    app: demo-deployment-app
+
+    

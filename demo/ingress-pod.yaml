@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: demo-ingress
+  name: demo-ingress-rules
+  namespace: default
+spec:
+  rules:
+  - host: demo-app.eros.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: pod-service
+          servicePort: 8000 
+
